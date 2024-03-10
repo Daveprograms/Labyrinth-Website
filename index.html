@@ -425,6 +425,78 @@ public class TestEncapsulation {
     In Java, a default constructor is provided by the compiler if no constructors are explicitly defined in a class. This constructor is a no-argument constructor that does not perform any special actions or initializations. It simply allows for the creation of an object. If a class does not declare any constructors, the Java compiler automatically provides a default constructor. However, if any constructors are explicitly declared (whether they take parameters or not), the compiler does not generate a default constructor. Additionally, if the derived class does not explicitly call the base class constructor using <code>super()</code>, the default constructor of the base class is implicitly called. If the base class lacks a default constructor, it results in a compilation error.
 </div>
 
+<div class="explanation-box-left">
+    <h2 class="topic-header">JavaFX Overview</h2>
+    <div class="qa-container">
+        
+        <!-- JavaFX Stage and Scene -->
+        <div class="question" onclick="toggleAnswer('javafxStageScene')">JavaFX Stage and Scene</div>
+        <div class="answer" id="javafxStageScene">
+            <p>Just like a theater has a stage where plays are performed, JavaFX applications have a 'Stage', which is the main window. The 'Scene' in JavaFX is like the play itself, containing all the content displayed on the stage.</p>
+            <p>A 'Stage' can have different 'Scenes' much like a theater can show different plays.</p>
+        </div>
+
+        <!-- JavaFX Nodes and Layouts -->
+        <div class="question" onclick="toggleAnswer('javafxNodesLayouts')">JavaFX Nodes and Layouts</div>
+        <div class="answer" id="javafxNodesLayouts">
+            <p>'Nodes' in JavaFX are like individual actors or props in a play, while 'Layouts' are like the director's plan for where each actor or prop should be on stage.</p>
+            <p>Various types of layouts organize nodes in a logical and visually pleasing manner.</p>
+        </div>
+
+        <!-- JavaFX Controls and Events -->
+        <div class="question" onclick="toggleAnswer('javafxControlsEvents')">JavaFX Controls and Events</div>
+        <div class="answer" id="javafxControlsEvents">
+            <p>Controls are interactive components like buttons or text fields, similar to interactive exhibits in a museum. Events are actions that occur in response to user interactions, like when a museum exhibit reacts to a button press.</p>
+            <p>Event handlers are scripts that determine what happens when an event occurs.</p>
+        </div>
+
+        <!-- JavaFX Binding and Properties -->
+        <div class="question" onclick="toggleAnswer('javafxPropertiesBinding')">JavaFX Binding and Properties</div>
+        <div class="answer" id="javafxPropertiesBinding">
+            <p>'Properties' in JavaFX hold information about the nodes, much like a scoreboard keeps track of scores. 'Binding' automatically updates one property when another changes, like how a scoreboard updates when a team scores a point.</p>
+        </div>
+
+        <!-- JavaFX Animation and Media -->
+        <div class="question" onclick="toggleAnswer('javafxAnimationMedia')">JavaFX Animation and Media</div>
+        <div class="answer" id="javafxAnimationMedia">
+            <p>Animations in JavaFX are like the moving parts of a clock, smoothly transitioning from one state to another. Media components allow for the inclusion of audio and video, like a video playing on a screen at a museum exhibit.</p>
+        </div>
+
+        <!-- JavaFX Styling with CSS -->
+        <div class="question" onclick="toggleAnswer('javafxCSS')">JavaFX Styling with CSS</div>
+        <div class="answer" id="javafxCSS">
+            <p>CSS in JavaFX works similarly to dressing up for a party. You can specify the style and layout of nodes, such as colors, shapes, and sizes, creating a visually appealing interface.</p>
+        </div>
+
+        <!-- JavaFX Example Code -->
+        <div class="question" onclick="toggleAnswer('javafxExampleCode')">JavaFX Example: Building Olaf</div>
+        <div class="answer" id="javafxExampleCode">
+            <p>Creating Olaf from 'Frozen' in JavaFX can be compared to creating a paper cut-out model, where you use shapes to build a character.</p>
+            <pre>
+// Sample JavaFX code to create Olaf, the snowman
+public class Olaf extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        Group root = new Group();
+        // Add body parts, eyes, arms, buttons, etc., to 'root'
+        Scene scene = new Scene(root, 500, 500, Color.LIGHTBLUE);
+        primaryStage.setTitle("Olaf");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+            </pre>
+            <p>This JavaFX program sets the stage for a winter scene and adds different parts to construct Olaf, with shapes representing his body, head, arms, buttons, and nose.</p>
+        </div>
+
+    </div>
+</div>
+
+
+
 
 
 
@@ -495,6 +567,8 @@ public class Main {
             </pre>
             <p>This Java program calculates the average of three numbers, illustrating the use of time and space complexity in practical terms.</p>
         </div>
+
+
 
     </div>
 
