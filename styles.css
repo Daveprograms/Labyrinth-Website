@@ -1,7 +1,460 @@
 body {
+          background-color: #faebd7;
+          font-family: "Arial", sans-serif;
+          font-size: 16px;
+          color: #333333;
+          margin: 0;
+          padding: 0;
+        }
+        
+        h1 {
+          font-size: 2.5rem;
+          font-weight: bold;
+          color: #4a4a4a;
+          text-align: center;
+          padding: 20px;
+          margin-bottom: 30px;
+        }
+        
+        .explanation-box,
+        .explanation-box-left {
+          border: 1px solid #d3d3d3;
+          padding: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+          background-color: #6495ed;
+          border-radius: 8px;
+          word-wrap: break-word;
+          margin-bottom: 20px;
+        }
+        
+        .explanation-box {
+          width: 80%;
+          margin: auto;
+        }
+        
+        .explanation-box-left {
+          width: 80%;
+          margin: auto;
+        }
+        
+        .topic-header {
+          font-size: 1.8rem;
+          color: #333;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        }
+        
+        .question,
+        .answer {
+          padding: 12px;
+          background-color: #333333;
+          color: red;
+          cursor: pointer;
+          margin-bottom: 5px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+        }
+        
+        .question:hover {
+          background-color: #4caf50;
+        }
+        
+        .answer {
           background-color: #f0f0f0;
-      }
-      
-      h1 {
-          color: blue;
-      }
+          display: none;
+          margin-bottom: 10px;
+          border-radius: 5px;
+        }
+        
+        .comment-section,
+        .contact-section,
+        #loginForm,
+        #signupForm {
+          max-width: 500px;
+          margin: 20px auto;
+          background-color: white;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        input,
+        textarea,
+        button {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 15px;
+          border: 1px solid #d3d3d3;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+          background-color: #0056b3;
+        }
+        
+        a {
+          color: #007bff;
+          text-decoration: none;
+        }
+        
+        a:hover {
+          text-decoration: underline;
+        }
+        
+        @media screen and (max-width: 768px) {
+          .explanation-box,
+          .explanation-box-left,
+          .comment-section,
+          .contact-section,
+          #loginForm,
+          #signupForm {
+            width: 90%;
+            margin: 15px auto;
+          }
+        
+          .question,
+          .answer {
+            font-size: 0.9em;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          h1 {
+            font-size: 2rem;
+          }
+        
+          .question,
+          .answer {
+            font-size: 0.8em;
+          }
+        }
+        
+        .search-container {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        
+        #searchInput {
+          width: 80%;
+          padding: 10px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #d3d3d3;
+          border-radius: 4px;
+          font-size: 1rem;
+        }
+        
+        .highlighted-question {
+          background-color: #add8e6;
+        }
+        
+        #searchResultMessage,
+        #addQuestionForm {
+          margin: 20px auto;
+          text-align: center;
+        }
+        
+        #addQuestionForm input,
+        #addQuestionForm button {
+          margin-top: 10px;
+          width: 90%;
+          padding: 10px;
+        }
+        
+        @media screen and (max-width: 768px) {
+          .explanation-box,
+          .explanation-box-left,
+          .comment-section,
+          .contact-section,
+          #loginForm,
+          #signupForm {
+            width: 90%;
+            margin: 15px auto;
+          }
+        
+          .question,
+          .answer {
+            font-size: 0.9em;
+          }
+        
+          #searchInput {
+            width: 90%;
+            font-size: 0.9rem;
+          }
+        
+          #addQuestionForm input,
+          #addQuestionForm button {
+            width: 90%;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          h1 {
+            font-size: 2rem;
+          }
+        
+          .question,
+          .answer {
+            font-size: 0.8em;
+          }
+        
+          #searchInput {
+            width: 95%;
+            font-size: 0.8rem;
+          }
+        
+          #addQuestionForm input,
+          #addQuestionForm button {
+            width: 95%;
+          }
+        }
+        
+        @media screen and (max-width: 1024px) {
+          .explanation-box,
+          .explanation-box-left,
+          .comment-section,
+          .contact-section,
+          #loginForm,
+          #signupForm,
+          #addQuestionForm,
+          #knowAnswerForm {
+            width: 90%;
+            margin: 20px auto;
+          }
+        
+          .question,
+          .answer {
+            font-size: 1em;
+          }
+        
+          header h1,
+          .contact-section h2,
+          .topic-header {
+            padding: 15px;
+          }
+        }
+        
+        @media screen and (max-width: 768px) {
+          header h1 {
+            font-size: 1.5rem;
+          }
+        
+          #searchInput,
+          #contactForm input,
+          #contactForm textarea,
+          #contactForm button,
+          #addQuestionForm input,
+          #addQuestionForm button,
+          #knowAnswerForm input,
+          #knowAnswerForm textarea,
+          #knowAnswerForm button {
+            width: 95%;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          .question,
+          .answer {
+            font-size: 0.9em;
+          }
+        
+          #knowAnswerForm input,
+          #knowAnswerForm textarea,
+          #knowAnswerForm button,
+          #addQuestionForm input,
+          #addQuestionForm button {
+            padding: 10px;
+          }
+        }
+        
+        /* Style for the note */
+        #note {
+          padding: 10px;
+          background-color: lightblue;
+          cursor: pointer;
+          width: 200px;
+          text-align: center;
+          border-radius: 5px;
+        }
+        
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0, 0, 0); /* Fallback color */
+          background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+          background-color: #fefefe;
+          margin: 15% auto; /* 15% from the top and centered */
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+        }
+        
+        /* The Close Button */
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        /* Base styles */
+        
+        #updateNote {
+          padding: 10px;
+          background-color: lightcoral;
+          cursor: pointer;
+          width: 250px;
+          text-align: center;
+          border-radius: 5px;
+          margin-top: 20px;
+          margin-bottom: 20px; /* Added for spacing */
+        }
+        
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+          background-color: #fefefe;
+          margin: 10% auto; /* Adjusted for better positioning */
+          padding: 20px;
+          border: 1px solid #888;
+          width: 60%; /* Starting width, adjusted for smaller screens below */
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        /* Responsive adjustments */
+        
+        @media screen and (max-width: 768px) {
+          .modal-content {
+            width: 80%; /* Increase width for smaller screens */
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          #updateNote {
+            width: 90%; /* Make the note button wider on very small screens */
+            margin: 20px auto; /* Center the note button */
+            display: block;
+          }
+        
+          .modal-content {
+            width: 95%; /* Use most of the screen width */
+            margin: 20% auto; /* Adjust margin for top positioning */
+          }
+        }
+        
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+          width: 100%;
+          padding: 15px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        
+        .message-box,
+        .form-box {
+          width: 50%; /* Split the container in half */
+          height: 100%; /* Take full height for vertical alignment */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .submit-btn {
+          width: 100%;
+          padding: 15px;
+          border: none;
+          background-color: #5cb85c;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+          background-color: #4cae4c;
+        }
+        
+        /* Active form and message styles */
+        #signInForm {
+          background-color: #f0f0f0;
+          padding: 20px;
+          border-radius: 10px;
+        }
+        
+        #signUpForm {
+          background-color: #f7f7f7;
+          padding: 20px;
+          border-radius: 10px;
+        }
+        
+        .btn-animate {
+          animation: btnClickAnimation 0.4s ease;
+        }
+        
+        @keyframes btnClickAnimation {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        
