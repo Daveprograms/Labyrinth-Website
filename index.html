@@ -1,12 +1,598 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Web Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA LABYRINTH EXPLORE</title>
+    <!-- Example for linking a CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css"></link>
+
 </head>
 <body>
-    <h1 id="myHeading">Welcome to My Web Page</h1>
-    <button id="myButton">Change color</button>
+    <header>        
+        <h1>WELCOME TO JAVA LABYRINTH EXPLORE</h1>
+    </header>
+
+   
+        <aside class="explanation-box">
+            <p>This site is your gateway to exploring the Java programming language, along with a mix of other technologies. Dive into various topics, questions, and discussions about Java and more.</p>
+
+            <div id="note" onclick="showPopup()">Click me for updates!</div>
+    <div id="popup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Upgrading this website every day, adding new knowledge</p>
+        </div>
+    </div>
+
+
+    <div id="updateNote" onclick="showUpdatePopup()">Click me to see what was added today!</div>
+    <div id="updatePopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUpdatePopup()">&times;</span>
+            <p id="todayUpdateContent"></p>
+        </div>
+    </div>
+    
+        </aside>
+
+
+        <aside class="explanation-box-left">
+            <p>There are various Questions and Answer in this website</p>
+            <div class="qa-container">
+              <h2 class="topic-header">Java Foundations: Exploring Object-Oriented Programming</h2>
+              <div class="question" onclick="toggleAnswer('enhancedJavaIntro')">Enhanced Introduction to Java</div>
+<div class="answer" id="enhancedJavaIntro">
+    <h3>Brief History of Java and Its Evolution</h3>
+    <p>Java was developed by James Gosling at Sun Microsystems and released in 1995. Originally called Oak, it was designed for interactive television, but was too advanced for the digital cable television industry at the time. Java's "Write Once, Run Anywhere" (WORA) principle has made it one of the most popular programming languages.</p>
+    <h3>Overview of the JDK, JRE, and JVM</h3>
+    <ul>
+        <li><strong>JDK (Java Development Kit):</strong> A software development kit needed to develop Java applications. It includes the JRE, a compiler, and other tools.</li>
+        <li><strong>JRE (Java Runtime Environment):</strong> Provides the libraries and the JVM to run applications written in Java.</li>
+        <li><strong>JVM (Java Virtual Machine):</strong> A runtime engine that executes Java bytecode. It enables Java's WORA principle by being available on many platforms.</li>
+    </ul>
+    <h3>Explanation of Java's WORA Principle</h3>
+    <p>Java's "Write Once, Run Anywhere" principle allows compiled Java bytecode to run on all platforms without needing recompilation, thanks to the JVM.</p>
+</div>
+
+<div class="question" onclick="toggleAnswer('javaBasics')">Basics of Java Programming</div>
+<div class="answer" id="javaBasics">
+    <h3>Detailed Syntax Explanations</h3>
+    <ul>
+        <li><strong>Variables:</strong> Reserved memory locations to store values. Defined by data types such as <code>int</code>, <code>double</code>, <code>boolean</code>.</li>
+        <li><strong>Data Types:</strong> Include primitive (e.g., <code>int</code>, <code>double</code>) and reference/object types (e.g., <code>String</code>).</li>
+        <li><strong>Operators:</strong> Includes arithmetic (<code>+</code>, <code>-</code>), relational (<code>==</code>, <code>!=</code>), and logical (<code>&&</code>, <code>||</code>) operators.</li>
+        <li><strong>Control Flow Statements:</strong> <code>if-else</code> statements, <code>for</code>, <code>while</code>, and <code>do-while</code> loops for decision making and repetitive tasks.</li>
+    </ul>
+    <h3>Explanation of Java Packages and Import Statements</h3>
+    <p>Packages organize classes into a folder structure for easy management. <code>import</code> statements allow your class to use classes from other packages.</p>
+    <h3>Detailed Section on Java Methods, Including Method Overloading</h3>
+    <p>Methods in Java perform specific tasks and improve code reusability. Method overloading allows multiple methods with the same name but different parameter lists, enabling polymorphism.</p>
+    <h4>Real-life Example of Method Overloading</h4>
+    <pre>
+class MathOperation {
+    public int add(int a, int b) { return a + b; }
+    public int add(int a, int b, int c) { return a + b + c; }
+    public double add(double a, double b) { return a + b; }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MathOperation operation = new MathOperation();
+        System.out.println(operation.add(10, 20)); // Outputs 30
+        System.out.println(operation.add(10, 20, 30)); // Outputs 60
+        System.out.println(operation.add(10.0, 20.0)); // Outputs 30.0
+    }
+}
+    </pre>
+</div>
+
+
+<div class="question" onclick="toggleAnswer('whatIsJava')">What is Java?</div>
+<div class="answer" id="whatIsJava">
+    <p>Java is an object-oriented, class-based programming language designed to have as few implementation dependencies as possible. It allows developers to "write once, run anywhere" (WORA), meaning that Java code compiled on one platform does not need to be recompiled to run on another. Java is widely used for developing application software and deploying it in cross-platform computing environments.</p>
+    <h3>How Java Differs from Other Programming Languages</h3>
+    <ul>
+        <li><strong>Platform Independence:</strong> Java provides a unique feature of not being tied to a specific hardware or operating system. This is achieved through the use of the Java Virtual Machine (JVM).</li>
+        <li><strong>Object-Oriented:</strong> Everything in Java is an object, which encapsulates data and operations on data, making it easier to structure and manage complex programs.</li>
+        <li><strong>Robust and Secure:</strong> Java offers strong memory management and protection against many vulnerabilities, such as buffer overflows. It also includes a security manager that defines the access rules for classes.</li>
+    </ul>
+</div>
+
+<div class="question" onclick="toggleAnswer('publicStaticVoidMain')">The Significance of the public static void main(String[] args) Method</div>
+<div class="answer" id="publicStaticVoidMain">
+    <p>The <code>public static void main(String[] args)</code> method is the entry point for a Java application. When the Java Virtual Machine (JVM) starts, it looks for this specific method signature to begin execution of the Java program.</p>
+    <ul>
+        <li><strong>public:</strong> The method is accessible from any other class.</li>
+        <li><strong>static:</strong> The method can be called without creating an instance of the class containing the main method.</li>
+        <li><strong>void:</strong> The method does not return any value.</li>
+        <li><strong>main:</strong> The name of the method searched for by the JVM as the starting point of the application.</li>
+        <li><strong>String[] args:</strong> The method accepts a single argument: an array of strings, which allows command-line arguments to be passed to the application.</li>
+    </ul>
+    <h4>Example Usage</h4>
+    <pre>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); // Prints "Hello, World!" to the console.
+    }
+}
+    </pre>
+    <p>This simple program demonstrates the use of the <code>public static void main(String[] args)</code> method. When you run this program, it prints "Hello, World!" to the console.</p>
+</div>
+
+<div class="question" onclick="toggleAnswer('basicJavaConcepts')">Exploring Basic Java Concepts with Code Examples</div>
+<div class="answer" id="basicJavaConcepts">
+    <h3>Variables and Data Types</h3>
+    <p>Java supports various data types, such as <code>int</code> for integers, <code>double</code> for floating-point numbers, and <code>boolean</code> for true/false values.</p>
+    <h4>Example:</h4>
+    <pre>
+int number = 25; // Integer variable
+double rate = 3.14; // Double variable
+boolean isJavaFun = true; // Boolean variable
+    </pre>
+    <h3>Control Flow Statements</h3>
+    <p>Control flow statements, like <code>if-else</code> and <code>for</code> loops, control the execution flow of the program based on conditions.</p>
+    <h4>Example:</h4>
+    <pre>
+// If-Else Statement
+if (number > 20) {
+    System.out.println("The number is greater than 20.");
+} else {
+    System.out.println("The number is 20 or less.");
+}
+
+// For Loop
+for (int i = 0; i < 5; i++) {
+    System.out.println("This is iteration number " + i);
+}
+    </pre>
+</div>
+
+              <div class="question" onclick="toggleAnswer('java2')">What is a Java Class?</div>
+              <div class="answer" id="java2">In Java, a class is a blueprint for creating objects.</div>
+
+              <div class="question" onclick="toggleAnswer('oop1')">WHAT IS OOP?</div>
+                <div class="answer" id="oop1">OOP is a programming methodology based on the representation of a software product as a collection of objects, each of which is an instance of a particular class. Object takes the main place in this software design approach. Object can be described as a data structure (some state) plus some behavior to modify and interact with this data (state). OOP uses the interaction of objects as its basic elements.</div>
+                
+
+                <div class="question" onclick="toggleAnswer('object')">WHAT IS AN OBJECT?</div>
+                <div class="answer" id="object">An object is a named model of a real entity that has specific property values and manifests its behavior. Object has a set of data (fields and properties of an object) that is physically located in the computer's memory. Also, object has methods that have access to the data (fields and properties). An object is a concrete instance of a class.</div>
+
+                <div class="question" onclick="toggleAnswer('oopPrinciples')">NAME THE BASIC PRINCIPLES OF OOP.</div>
+                <div class="answer" id="oopPrinciples">It is generally accepted that object-oriented programming is based on 4 basic principles (there were only 3 before). These principles are: (Abstraction), Encapsulation, Inheritance, Polymorphism.</div>
+               
+                
+                <div class="question" onclick="toggleAnswer('oopConcepts')">UNDERSTANDING ALL OOP CONCEPTS WITH REAL LIFE EXAMPLE</div>
+<div class="answer" id="oopConcepts">
+    <h3>Real-life Examples of OOP Concepts</h3>
+
+    <h4>Polymorphism</h4>
+    <p>Just as a person can have different roles such as a mother, a writer, or a student, in programming, polymorphism allows objects to take on many forms. A method in a parent class can be overridden in its subclass to perform different operations.</p>
+    <pre>
+class Person {
+    void role() {
+        System.out.println("Person has multiple roles.");
+    }
+}
+class Mother extends Person {
+    void role() {
+        System.out.println("Person is a Mother now.");
+    }
+}
+class Writer extends Person {
+    void role() {
+        System.out.println("Person is a Writer.");
+    }
+}
+class Student extends Person {
+    void role() {
+        System.out.println("Person is a Student.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Mother();
+        p.role(); // Outputs "Person is a Mother now."
+        p = new Writer();
+        p.role(); // Outputs "Person is a Writer."
+        p = new Student();
+        p.role(); // Outputs "Person is a Student."
+    }
+}
+    </pre>
+
+    <h4>Inheritance</h4>
+    <p>Similar to puppies inheriting characteristics from their parents, in programming, inheritance allows a class to inherit fields and methods from another class.</p>
+    <pre>
+class Animal {
+    String color;
+    Animal(String color) {
+        this.color = color;
+    }
+}
+class Dog extends Animal {
+    Dog(String color) {
+        super(color);
+    }
+}
+public class TestInheritance {
+    public static void main(String[] args) {
+        Dog dog = new Dog("brown");
+        System.out.println(dog.color); // Outputs "brown"
+    }
+}
+    </pre>
+
+    <h4>Abstraction</h4>
+    <p>As a mobile phone provides a simplified interface for complex operations like making calls or taking photos, abstraction in programming hides complex implementation details and only exposes the necessary features to the user.</p>
+    <pre>
+abstract class Smartphone {
+    abstract void makeCall();
+    abstract void takePhoto();
+}
+class iPhone extends Smartphone {
+    void makeCall() {
+        System.out.println("Making a call.");
+    }
+    void takePhoto() {
+        System.out.println("Taking a photo.");
+    }
+}
+public class TestAbstraction {
+    public static void main(String[] args) {
+        Smartphone phone = new iPhone();
+        phone.makeCall(); // Outputs "Making a call."
+        phone.takePhoto(); // Outputs "Taking a photo."
+    }
+}
+    </pre>
+
+    <h4>Encapsulation</h4>
+    <p>A company has different departments like Production, HR, and Marketing, each encapsulating specific functions. Similarly, encapsulation in programming groups together data and methods that manipulate the data, keeping it safe from outside interference and misuse.</p>
+    <pre>
+class Company {
+    private String department;
+    private int employeeCount;
+    public String getDepartment() {
+        return department;
+    }
+    public void setDepartment(String dept) {
+        this.department = dept;
+    }
+    public int getEmployeeCount() {
+        return employeeCount;
+    }
+    public void setEmployeeCount(int count) {
+        this.employeeCount = count;
+    }
+}
+public class TestEncapsulation {
+    public static void main(String[] args) {
+        Company company = new Company();
+        company.setDepartment("HR");
+        company.setEmployeeCount(25);
+        System.out.println("Department: " + company.getDepartment()); // Outputs "Department: HR"
+        System.out.println("Employee Count: " + company.getEmployeeCount()); // Outputs "Employee Count: 25"
+    }
+}
+    </pre>
+</div>
+
+
+                <div class="question" onclick="toggleAnswer('inheritance')">WHAT IS INHERITANCE?</div>
+                 <div class="answer" id="inheritance">Inheritance is the process by which you can describe one type based on the other type. Also, during the inheritance, one object can acquire the properties of another object (inheritance of all the properties of one object by another)
+                and add features characteristic only of himself. Example: <code>class Dog extends Animal { ... }</code> This illustrates a Superclass (Animal) -> Subclass (Dog) relationship, also known as Parent -> Child.</div>
+
+                <div class="question" onclick="toggleAnswer('polymorphism')">WHAT IS POLYMORPHISM? WHAT MANIFESTATIONS OF POLYMORPHISM IN JAVA DO YOU KNOW?</div>
+                <div class="answer" id="polymorphism">Polymorphism (from the Greek polymorphous) is a property that allows the same name to be used to solve two or more similar but technically different tasks. The goal of polymorphism, as applied to object-oriented programming, is to use a single name to define common actions for a class. The execution of each specific action will be determined by the data type. More generally, the concept of polymorphism is the idea of "one interface, many methods". This means that you can create a common interface for a group of similar actions. For example, you have an acceleration pedal on an electric car and on a car with a gasoline engine. In both cases, pressing the acceleration pedal would bring us the same result - the car will go faster. But the way how exactly acceleration will be implemented in electric and non-electric cars - will be different because of the different car construction.</div>
+
+                <div class="question" onclick="toggleAnswer('encapsulation')">WHAT IS ENCAPSULATION?</div>
+                <div class="answer" id="encapsulation">Encapsulation is hiding the implementation of a class and separating its internal representation from the external (interface). This is a property that allows you to close access to the fields and methods of the class to other classes, and provide them with access only through the external interface (methods). When using an object-oriented approach, it is not ok to directly access the properties of a class from the methods of other classes. To access the properties of a class, usually, you need to use special methods of this class to get and change its properties.</div>
+
+                <div class="question" onclick="toggleAnswer('oopAdvantages')">WHAT ARE THE ADVANTAGES OF OBJECT-ORIENTED PROGRAMMING LANGUAGES?</div>
+<div class="answer" id="oopAdvantages">
+    <ol>
+        <li><strong>Modularity for easier troubleshooting</strong><br>
+        When working with object-oriented programming languages, you know exactly where to look when something goes wrong. This modularity allows an IT team to work on multiple objects simultaneously while minimizing the chance of duplication.</li>
+        <li><strong>Reuse of code through inheritance</strong><br>
+        The inheritance technique saves time by allowing the creation of a generic class (e.g., Car), and then subclasses (e.g., RaceCar and Limousine) that inherit the generic class’s traits. This enables code reuse and simplifies maintenance.</li>
+        <li><strong>Flexibility through polymorphism</strong><br>
+        Polymorphism allows a single function to adapt to whichever class it’s in, enabling a common interface for a group of actions. This flexibility aids in the creation of more dynamic and versatile code.</li>
+        <li><strong>Effective problem solving</strong><br>
+        Object-oriented programming enables breaking down a large problem into solvable chunks, making it a more intuitive approach for developing large projects. The reuse of classes further accelerates the development process.</li>
+    </ol>
+</div>
+
+<div class="question" onclick="toggleAnswer('oopDisadvantages')">WHAT ARE THE DISADVANTAGES OF THE OOP APPROACH?</div>
+<div class="answer" id="oopDisadvantages">
+    <ul>
+        <li><strong>Steep expectation to learn and adapt:</strong> The perspective engaged with object-oriented programming may not be natural for some individuals, and it can take some time to become accustomed to it. Making programs based on the interaction of objects can be complex, and some key programming techniques, like inheritance and polymorphism, can be challenging to grasp initially.</li>
+        <li><strong>Larger program size:</strong> Object-oriented programs typically include more lines of code than procedural projects.</li>
+        <li><strong>Slower programs:</strong> Object-oriented programs are usually slower than procedure-based programs, as they typically require more instructions to be executed.</li>
+        <li><strong>Requirement for excellent design and programming skills:</strong> Programmers need to have excellent designing skill and programming skill along with proper planning because using OOP can be a bit tricky.</li>
+    </ul>
+</div>
+
+<div class="question" onclick="toggleAnswer('isHasOOP')">THERE IS THE EXPRESSION "IS" AND "HAS". WHAT DO THEY MEAN IN TERMS OF OOP PRINCIPLES? WHAT IS THE DIFFERENCE BETWEEN COMPOSITION AND AGGREGATION?</div>
+<div class="answer" id="isHasOOP">
+    <p>"is" represents inheritance, whereas "has" represents composition in object-oriented programming. For example, a House "is" a Building (inheritance), but a House "has" a Bathroom (composition). If there is no "is" relationship, it's better to use composition to reuse code. Interfaces should be used for polymorphism when there's no "is" key dependency.</p>
+    <p>An association denotes a relationship between objects. Aggregation and composition are special cases of association. Aggregation implies a "part-of" relationship, but components in an aggregation can belong to multiple aggregations. Composition is a stricter form of aggregation where a part cannot belong to multiple compositions and is destroyed when the composite is.</p>
+    <p>For example, a motorcycle "has" a luggage bag (association), a motorcycle "is composed of" wheels (composition), and a person "is part of" an interest group (aggregation), but may belong to several groups.</p>
+</div>
+
+<div class="question" onclick="toggleAnswer('polymorphismEncapsulationDynamicBinding')">WHAT DO YOU MEAN BY POLYMORPHISM, ENCAPSULATION, AND DYNAMIC BINDING?</div>
+<div class="answer" id="polymorphismEncapsulationDynamicBinding">
+    <p>Polymorphism refers to the ability of a variable of a given type to refer to objects of different types by calling a method that is specific to the particular type of object reference. The advantage of polymorphism is that it allows you to add new derived object classes without breaking the calling code, a concept also known as dynamic object binding.</p>
+    <p>Consider an example of polymorphism with classes: Shape, Circle, and Triangle, where Circle and Triangle inherit from Shape. Each class has a "draw" method, which is overridden in Circle and Triangle. When we create an object of type "Shape" and assign it a reference to an object of the "Circle" type, calling the "draw" method on this object results in the method of the "Circle" class being invoked.</p>
+    <p>Example: <code>Figure f = new Circle(); f.draw();</code></p>
+    <p>This encapsulation of behavior can be further utilized with interfaces, allowing for dynamic binding, where the specific method to be invoked at runtime depends on the object behind the reference.</p>
+</div>
+
+<div class="question" onclick="toggleAnswer('accessModifiers')">DESCRIBE ACCESS MODIFIERS IN JAVA.</div>
+<div class="answer" id="accessModifiers">
+    <p>Java has the following access modifiers:</p>
+    <ul>
+        <li><strong>private:</strong> Used in constructors, inner classes, methods, and class fields - Access is allowed only within the current class.</li>
+        <li><strong>default (package-private):</strong> Used in classes, constructors, interfaces, inner classes, methods, and class fields - Package level access. A class declared this way will only be available within its package.</li>
+        <li><strong>protected:</strong> Used in constructors, inner classes, methods, and class fields - Provides access within the package and also to subclasses outside the package.</li>
+        <li><strong>public:</strong> Used in classes, constructors, interfaces, inner classes, methods, and class fields - Makes the member accessible from any other class.</li>
+    </ul>
+    <p>The sequence of modifiers in descending order of privacy level is: private, default, protected, public.</p>
+</div>
+
+<div class="question" onclick="toggleAnswer('abstractClassVsInterface')">HOW DOES AN ABSTRACT CLASS DIFFER FROM AN INTERFACE? WHEN WOULD YOU USE AN ABSTRACT CLASS AND WHEN WOULD YOU USE THE INTERFACE?</div>
+<div class="answer" id="abstractClassVsInterface">
+    An abstract class is a class that is marked "abstract" and may or may not contain abstract methods. An instance of an abstract class cannot be instantiated. A class that inherits from an abstract class may or may not implement abstract methods. In case a child class doesn’t implement all abstract methods, then it must also be abstract. Also, if the inheritor class overrides the method implemented in the abstract parent class, it can be overridden with the abstract modifier! That is, to abandon the implementation. Accordingly, this class must also be abstract as well.<br><br>
+    As for the interface, it contains only abstract methods and constants, this was the case before the release of Java 8. Starting with Java 8, in addition to abstract methods, we can also use standard methods (default methods) and static methods (static methods) in interfaces.<br>
+    A Default method in an interface is a method in an interface with default logic that is not required to be defined in the implementation of that interface.<br>
+    Static methods in an interface are essentially the same as static methods in an abstract class.<br>
+    When implementing an interface, a class must implement all methods of the interface. Otherwise, the class must be marked as abstract. An interface can also contain inner classes. And no abstract methods in them.<br>
+    Also, always remember that you can extend only one class in Java, but you can implement multiple interfaces.<br>
+    What to use: Interface or Abstract class?<br>
+    An abstract class is used when we need some kind of default implementation. An interface is used when a class needs to specify specific behavior. Often an interface and an abstract class are combined, i.e., implement an interface in an abstract class to specify the default behavior and implementation.
+</div>
+
+<div class="question" onclick="toggleAnswer('privateAccess')">CAN AN OBJECT ACCESS A PRIVATE CLASS VARIABLE? IF YES, HOW?</div>
+<div class="answer" id="privateAccess">
+    In general, a private class variable can only be accessed within the class in which it is declared. Private variables can also be accessed through the Java Reflection API.
+</div>
+
+<div class="question" onclick="toggleAnswer('staticOverload')">IS IT POSSIBLE TO OVERLOAD A STATIC METHOD?</div>
+<div class="answer" id="staticOverload">
+    Static methods can be overloaded by non-static methods and vice versa - without restrictions. But there is no point in overriding a static method.
+</div>
+
+<div class="question" onclick="toggleAnswer('innerClassesUse')">TELL ME ABOUT INTERNAL CLASSES. WHEN WILL YOU USE THEM?</div>
+<div class="answer" id="innerClassesUse">
+    An inner class is a class that exists within a class or interface. In doing so, it gains access to all fields and methods of its outer class.<br>
+    What can it be used for? For example, to provide some additional class logic and encapsulate it. Although the use of inner classes complicates the program, it is recommended to avoid their use.
+</div>
+
+<div class="question" onclick="toggleAnswer('instanceVsStaticVar')">WHAT IS THE DIFFERENCE BETWEEN AN INSTANCE VARIABLE AND A STATIC VARIABLE? GIVE AN EXAMPLE.</div>
+<div class="answer" id="instanceVsStaticVar">
+    Static variables are initialized when the class is loaded by the classloader, and do not depend on the object. An instance variable is initialized when the class is created.<br>
+    Example: For example, we need a global variable for all objects of a class, such as the number of visits by users of a particular article on the Internet. Each time an article is visited, a new object is created and the visits variable is incremented. The visits variable is a static variable that remains the same for all instances of the same class.
+</div>
+
+<div class="question" onclick="toggleAnswer('typeCastingException')">TELL ABOUT TYPE CASTING. WHEN DO YOU RECEIVE CLASSCASTEXCEPTION?</div>
+<div class="answer" id="typeCastingException">
+    Type casting is setting the type of a variable or object to something other than the current type. There are two types of cast in Java: automatic and not automatic. Automatic happens, for example, in such cases: byte->short->int->long->float->double, that is, if we extend the type, then no explicit conversion is required, the cast happens automatically. If we are narrowing, then it is necessary to explicitly specify the type conversion. In the case of objects, we can automatically cast fromthe child type to the parent, but not vice versa, then a ClassCastException will be thrown.
+</div>
+
+<div class="question" onclick="toggleAnswer('staticClass')">WHAT IS A STATIC CLASS, WHAT ARE THE FEATURES OF ITS USE?</div>
+<div class="answer" id="staticClass">
+    A static class can only be a nested class (a class definition placed inside another class). Unlike an ordinary inner class that holds a reference to an object of the outer class, a static inner class does not. This means an object of the outer class is not needed to create an object of a static inner class, and from an object of a static nested class, you cannot directly access the non-static members of the outer class. Additionally, ordinary inner classes cannot contain static methods and members.<br><br>
+    Nested classes are useful because each inner class can independently inherit a specific implementation, providing a solution to the problem of multiple inheritance by allowing the nested class to inherit from another class while the outer class might already inherit from a different class.
+</div>
+
+<div class="question" onclick="toggleAnswer('typesOfInnerClasses')">WHAT TYPES OF INNER CLASSES ARE THERE? WHAT ARE THEY USED FOR?</div>
+<div class="answer" id="typesOfInnerClasses">
+    Nested classes, available since Java 1.1, can be of four types:
+    <ul>
+        <li><strong>Static nested classes:</strong> Have access to any static methods of its outer class, including private ones. It cannot access non-static fields and methods directly, only through a reference to an instance of the parent's class.</li>
+        <li><strong>Non-static inner classes:</strong> Declared inside another class and have access to the non-static properties of the outer parent class.</li>
+        <li><strong>Local classes:</strong> Defined in a block, such as within the body of a method, and have scope limited to that block.</li>
+        <li><strong>Anonymous classes:</strong> Do not have a name and are declared and instantiated all at once, typically used for implementing interface methods or extending classes on the fly.</li>
+    </ul>
+    Each type serves different purposes, such as accessing specific members of the outer class, encapsulating helper classes, defining lightweight classes for one-time use, and more.
+</div>
+
+
+
+
+<div class="question" onclick="toggleAnswer('methodOverrideChanges')">IS IT POSSIBLE TO CHANGE WHEN OVERRIDE THE METHOD: Access Modifier, return type, Argument type or number of arguments, Argument name, Change the order, quantity, or remove the throws section altogether?</div>
+<div class="answer" id="methodOverrideChanges">
+    When overriding a method, the following changes are permissible:
+    <ul>
+        <li><strong>Access Modifier:</strong> Yes, if you expand access (package -> protected -> public).</li>
+        <li><strong>Return Type:</strong> Yes, if downcasting is performed. The return type in the overridden method of the heir class must NOT be wider than in the parent class (Object -> Number -> Integer).</li>
+        <li><strong>Argument Type or Number of Arguments:</strong> No, changing these leads to method overloading, not overriding.</li>
+        <li><strong>Argument Name:</strong> Yes, argument names can be changed as they do not affect polymorphism.</li>
+        <li><strong>Throws Section:</strong> It is possible to change the order, remove the throws section altogether, or add new exceptions that inherit from declared or runtime exceptions.</li>
+    </ul>
+    Important points on method overriding:
+    <ul>
+        <li>The access modifier in the method of the descendant class must NOT be narrower than in the parent class.</li>
+        <li>The description of the exception in the overridden method of the descendant class must NOT be wider than in the parent class.</li>
+        <li>A method declared as "private" in a parent class cannot be overridden.</li>
+    </ul>
+    Method overriding is valid when classes are inherited, ensuring the method has the same signature in the descendant class as in the parent class.
+</div>
+
+
+<div class="question" onclick="toggleAnswer('defaultConstructor')">WHAT IS A DEFAULT CONSTRUCTOR?</div>
+<div class="answer" id="defaultConstructor">
+    In Java, a default constructor is provided by the compiler if no constructors are explicitly defined in a class. This constructor is a no-argument constructor that does not perform any special actions or initializations. It simply allows for the creation of an object. If a class does not declare any constructors, the Java compiler automatically provides a default constructor. However, if any constructors are explicitly declared (whether they take parameters or not), the compiler does not generate a default constructor. Additionally, if the derived class does not explicitly call the base class constructor using <code>super()</code>, the default constructor of the base class is implicitly called. If the base class lacks a default constructor, it results in a compilation error.
+</div>
+
+
+
+
+<!-- Part 2 of java(DSA) -->
+
+    <h2 class="topic-header">DSA-JAVA</h2>
+    <div class="qa-container">
+        
+        <!-- Introduction to Data Structures -->
+        <div class="question" onclick="toggleAnswer('introToDS')">INTRO TO DATA STRUCTURES</div>
+        <div class="answer" id="introToDS">
+            <p>Data structures are ways to organize data in a computer so that it can be used effectively. Properly organized data allows for easy data processing and retrieval.</p>
+            <h3>Real-life example of a data structure:</h3>
+            <p>Imagine a library with many books arranged in a specific order, facilitating the search for a particular book. Here, the book represents the data, and the organizational method is the structure.</p>
+            <h3>Types of Data Structures:</h3>
+            <p>Data structures can be Linear, like Arrays, Linked Lists, Stacks, and Queues, or Non-Linear, like Trees and Graphs. Linear structures resemble a train, where each carriage is connected sequentially, while non-linear structures are more complex and do not form a straight line.</p>
+        </div>
+
+        <!-- Introduction to Algorithms -->
+        <div class="question" onclick="toggleAnswer('introToAlgorithms')">INTRO TO ALGORITHMS</div>
+        <div class="answer" id="introToAlgorithms">
+            <p>Algorithms are sets of instructions for performing tasks or solving problems. For instance, a recipe provides steps to prepare a dish, similar to how an algorithm offers a step-by-step method to solve a problem.</p>
+            <h3>Example of an Algorithm to Print Average:</h3>
+            <ol>
+                <li>Add three numbers.</li>
+                <li>Store the sum in a variable.</li>
+                <li>Divide the sum by 3.</li>
+                <li>Store the result in a variable 'avg'.</li>
+                <li>Print the value of 'avg'.</li>
+            </ol>
+        </div>
+
+        <!-- Analysis of Algorithms -->
+        <div class="question" onclick="toggleAnswer('analysisOfAlgorithms')">Analysis of Algorithms</div>
+        <div class="answer" id="analysisOfAlgorithms">
+            <p>The efficiency of algorithms is measured by their time and space complexities, often expressed using Big O notation.</p>
+            <h3>Space and Time Complexity:</h3>
+            <p>Time Complexity is a function that defines how the run-time of an algorithm increases with the input size, while Space Complexity defines the memory space it needs.</p>
+            <h3>Example:</h3>
+            <p>Comparing two cars' fuel consumption and speed, one can deduce their efficiency, analogous to space and time complexity in algorithms.</p>
+        </div>
+
+        <!-- Big O Notation -->
+        <div class="question" onclick="toggleAnswer('bigONotation')">BIG O NOTATION</div>
+        <div class="answer" id="bigONotation">
+            <p>Big O Notation describes the upper bound of an algorithm's time complexity, providing a worst-case scenario measure of its efficiency.</p>
+            <h3>Example:</h3>
+            <p>An algorithm taking at most 100 seconds has a time complexity of O(100), indicating its upper bound is 100 seconds.</p>
+        </div>
+
+        <!-- Code Example -->
+        <div class="question" onclick="toggleAnswer('codeExample')">Code Example</div>
+        <div class="answer" id="codeExample">
+            <pre>
+public class Main {
+    public static void main(String[] args) {
+        Main avg = new Main();
+        avg.findAvg(10, 20, 30);
+    }
+    public void findAvg(int a, int b, int c) {
+        int sum = a + b + c;
+        int avg = sum / 3;
+        System.out.println("Average of 3 numbers is: " + avg);
+        // Time complexity: O(1), constant time.
+        // Space complexity: O(1), constant space.
+    }
+}
+            </pre>
+            <p>This Java program calculates the average of three numbers, illustrating the use of time and space complexity in practical terms.</p>
+        </div>
+
+    </div>
+
+
+
+
+
+<!-- PART 3  of java-->
+
+<h2 class="topic-header">Java Collection Framework</h2>
+        <div class="question" onclick="toggleAnswer('collectionDefinitionJCF')">WHAT IS A COLLECTION IN JAVA COLLECTION FRAMEWORK?</div>
+        <div class="answer" id="collectionDefinitionJCF">
+            <p>Collections in the Java Collection Framework are data structures that primarily serve to store and manage objects. They provide an efficient way to access, modify, and manipulate collections of objects through a set of well-defined interfaces and implementations. This framework supports operations such as adding a new element, removing an element, and altering an element within the collection.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('mainInterfacesJCF')">NAME THE MAIN INTERFACES OF COLLECTIONS AND THEIR IMPLEMENTATIONS.</div>
+        <div class="answer" id="mainInterfacesJCF">
+            <p>The Java Collection Framework defines several core interfaces, each with multiple implementations:</p>
+            <ul>
+                <li><strong>List:</strong> An ordered collection that may contain duplicate entries. Common implementations include ArrayList, LinkedList, and Vector.
+                    <ul>
+                        <li>ArrayList is optimized for random access of elements.</li>
+                        <li>LinkedList excels in adding and removing elements.</li>
+                        <li>Vector is similar to ArrayList but is synchronized for thread safety.</li>
+                    </ul>
+                </li>
+                <li><strong>Set:</strong> A collection that cannot contain duplicate elements. Implementations include HashSet, TreeSet, and LinkedHashSet.
+                    <ul>
+                        <li>HashSet stores its elements in a hash table, is best for rapid lookups.</li>
+                        <li>TreeSet stores elements in a red-black tree, maintaining order.</li>
+                        <li>LinkedHashSet maintains insertion order.</li>
+                    </ul>
+                </li>
+                <li><strong>Queue:</strong> Designed for holding elements prior to processing. Main implementations are LinkedList and PriorityQueue.
+                    <ul>
+                        <li>LinkedList can also implement a dequeue.</li>
+                        <li>PriorityQueue orders elements according to their natural ordering or by a Comparator provided at queue construction time.</li>
+                    </ul>
+                </li>
+                <li><strong>Map:</strong> An object that maps keys to values, with no duplicate keys allowed. Notable implementations include HashMap, TreeMap, and LinkedHashMap.
+                    <ul>
+                        <li>HashMap allows null values and the null key.</li>
+                        <li>TreeMap is sorted according to the natural ordering of its keys or by a Comparator provided at map creation time.</li>
+                        <li>LinkedHashMap maintains insertion order.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>It's also worth noting that collections and maps can be made thread-safe using the Collections.synchronizedMap and Collections.synchronizedList methods.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+      
+              <h2 class="topic-header">SQL and Database</h2>
+              <div class="question" onclick="toggleAnswer('sql1')">What is SQL?</div>
+              <div class="answer" id="sql1">SQL is a standard language for storing, manipulating, and retrieving data in databases.</div>
+      
+              <div class="question" onclick="toggleAnswer('sql2')">What is a Relational Database?</div>
+              <div class="answer" id="sql2">A relational database is a type of database that stores and provides access to data points that are related to one another.</div>
+
+
+                <h2 class="topic-header">System Design</h2>
+                <div class="question" onclick="toggleAnswer('systemDesign1')">What is System Design?</div>
+                <div class="answer" id="systemDesign1">System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements.</div>
+
+
+
+
+            
+          </div>
+        </aside>
+    </main>
+
+        <!-- <footer class="contact-section">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="tel" id="phone" placeholder="Your Phone Number">
+                <textarea id="reason" placeholder="Reason for Contacting" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </footer> -->
+
+
+       
+    <!-- Example for linking a JavaScript file -->
     <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 </body>
 </html>
